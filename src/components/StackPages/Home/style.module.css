@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.container{
+    height: 100dvh;
+    background-color: #0d1b2a;
+}
+.title{
+    display: flex;
+    width: max-content;
+    font-family: "PlayFair Display", sans-serif;
+    position: relative;
+    top: 35px;
+    left: 35px;
+    padding: 10px 8px;
+    border-radius: 10px;
+    background-color: white;
+    transition: all 1s ease;
+}
+.title:hover{
+    background-color: #fdb833;
+    & .title_emphasis{
+        color: white;
+    }
+}
+.title_emphasis{
+    font-family: "PlayFair Display", sans-serif;
+    color: #fdb833;
+    margin-left: 7px;
+}
+.main_area{
+    height: calc(100dvh - 52px);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.actions_area{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 2pc;
+    padding: 90px 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+}
+.buttons_area{
+    display: flex;
+    flex-flow: row;
+    font-family: 'Inter', sans-serif;
+    gap: 2pc;
+}
+.button{
+    padding: 7px 8px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: medium;
+    background-color: #415a77;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+.button:hover{
+    background-color: #125ebc;
+    transform: scale(1.1,1.1);
+    box-shadow: 8px 10px 22px rgb(49, 49, 49);   
+}
+.subtitle{
+    font-family: 'Inter', sans-serif;
+}
