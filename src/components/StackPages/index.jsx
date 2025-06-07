@@ -27,10 +27,14 @@ export default function StackPages () {
             funcGoToCadaster={goToCadaster}
             funcGoToStockView={goToStockView}
             />}
+            
             {page == 1 && <Cadaster 
             funcComeBackPage={comeBackPage}
             />}
-            {page == 2 && <StockView />}
+
+            {page == 2 && <StockView 
+            funComeBackPage={comeBackPage}
+            />}
 
         </>
     )

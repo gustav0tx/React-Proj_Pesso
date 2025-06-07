@@ -1,0 +1,18 @@
+.label{
+    font-family: "Inter", sans-serif;
+    font-size: small;
+    font-weight: 600;
+}
+.input{
+    margin-top: 8px;
+    height: 22px;
+    text-indent: 12px;
+    border: 6px solid #415a77;
+    border-radius: 10px;
+    transition: all 500ms ease;
+}
+.input:focus{
+    outline: none;
+    border: 6px solid #125ebc;
+    border-radius: 10px;
+}

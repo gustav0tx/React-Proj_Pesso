@@ -1,40 +1,36 @@
 import style from './style.module.css'
-import back from '../../../assets/arrow_back.png'
+import Button from '../../StackParts/Button'
+import Input from '../../StackParts/Input'
+import StackParts from '../../StackParts'
+import produtsArr from '../../../data/produtsArr'
+import { useRef, useState } from 'react'
 
 export default function Cadaster({ funcComeBackPage }) {
+
+    const refNameProduct = useRef()
+    const refAmoutProduct = useRef()
+
+    const addProductInArr = () => {
+        if (refNameProduct.current.value != '' && refAmoutProduct.current.value != '') {
+            produtsArr.push({ id: produtsArr.length.toString(), name: refNameProduct.current.value, amount: refAmoutProduct.current.value.toString() })
+            refNameProduct.current.value = ''
+            refAmoutProduct.current.value = ''
+        }
+    }
+
     return (
-        <div className={style.container}>
+        <StackParts subtitleText={'Insira dados do Produto'} haveComeBack={true} funcComeBack={funcComeBackPage}>
 
-            <h2 className={style.title}>Stock & <span className={style.title_emphasis}>Control</span></h2>
+            <div className={style.form_area}>
 
-            <button className={style.back_button} onClick={funcComeBackPage}><img src={back} alt="Imagem seta voltando" /></button>
+                <Input ref={refNameProduct} value={refNameProduct.current}>Nome do Produto:</Input>
 
-            <div className={style.main_area}>
+                <Input ref={refAmoutProduct} value={refAmoutProduct.current}>Unidades do Produto:</Input>
 
-                <div className={style.actions_area}>
-
-                    <h3 className={style.subtitle}>Insira Dados do Produto</h3>
-
-                    <div className={style.form_area}>
-
-                        <label>
-                            Nome do Produto: <br />
-                            <input type="text" placeholder="Digite Aqui.." />
-                        </label><br />
-
-                        <label>
-                            Quantidade do Produto: <br />
-                            <input type="text" placeholder="Digite Aqui.." />
-                        </label><br />
-
-                        <button>Cadastrar</button>
-
-                    </div>
-
-                </div>
+                <Button onClickFunc={addProductInArr}>Cadastrar</Button>
 
             </div>
 
-        </div>
+        </StackParts>
     )
 }

@@ -1,0 +1,11 @@
+.actions_area{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    overflow: hidden;
+    gap: 2pc;
+    padding: 90px 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+}

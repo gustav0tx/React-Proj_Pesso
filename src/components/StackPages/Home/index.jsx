@@ -1,29 +1,19 @@
+import StackParts from '../../StackParts'
+import Button from '../../StackParts/Button'
 import style from './style.module.css'
 
 export default function Home({ funcGoToCadaster, funcGoToStockView }) {
     return (
-        <div className={style.container}>
+        <StackParts subtitleText={'Bem-Vindo, Escolha uma ação'} haveComeBack={false}>
 
-            <h2 className={style.title}>Stock & <span className={style.title_emphasis}>Control</span></h2>
+            <div className={style.buttons_area}>
 
-            <div className={style.main_area}>
+                <Button onClickFunc={funcGoToCadaster}>Quero Cadastrar Produto</Button>
 
-                <div className={style.actions_area}>
-
-                    <h3 className={style.subtitle}>Bem-Vindo, Escolha uma ação</h3>
-
-                    <div className={style.buttons_area}>
-
-                        <button className={style.button} onClick={funcGoToCadaster}>Quero Cadastrar produto</button>
-
-                        <button className={style.button} onClick={funcGoToStockView}>Quero Verificar Estoque</button>
-
-                    </div>
-
-                </div>
+                <Button onClickFunc={funcGoToStockView}>Quero Verificar Estoque</Button>
 
             </div>
 
-        </div>
+        </StackParts>
     )
 }

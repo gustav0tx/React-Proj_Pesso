@@ -1,0 +1,7 @@
+.button_back{
+    display: flex;
+    position: absolute;
+    left: 95%;
+    top: 45px;
+    align-content: center;
+}

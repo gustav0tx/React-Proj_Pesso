@@ -1,0 +1,23 @@
+.title{
+    display: flex;
+    width: max-content;
+    font-family: "PlayFair Display", sans-serif;
+    position: relative;
+    top: 35px;
+    left: 35px;
+    padding: 10px 8px;
+    border-radius: 10px;
+    background-color: white;
+    transition: all 1s ease;
+}
+.title:hover{
+    background-color: #fdb833;
+    & .title_emphasis{
+        color: white;
+    }
+}
+.title_emphasis{
+    font-family: "PlayFair Display", sans-serif;
+    color: #fdb833;
+    margin-left: 7px;
+}

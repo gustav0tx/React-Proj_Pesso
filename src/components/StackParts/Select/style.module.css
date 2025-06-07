@@ -1,0 +1,8 @@
+.select_title{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+.select{
+    border: 5px solid #415a77;
+    border-radius: 7px;
+}
