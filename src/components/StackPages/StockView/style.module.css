@@ -4,6 +4,7 @@
     position: relative;
     gap: 10px;
     overflow-y: scroll;
+    width: 400px;
     height: 300px;
     padding: 20px 20px;
     border: none;
@@ -32,4 +33,7 @@
     flex-flow: row;
     align-items: center;
     gap: 10px;
+}
+.result{
+    font-family: 'Inter';
 }

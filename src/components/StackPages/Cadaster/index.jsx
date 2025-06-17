@@ -2,20 +2,18 @@ import style from './style.module.css'
 import Button from '../../StackParts/Button'
 import Input from '../../StackParts/Input'
 import StackParts from '../../StackParts'
-import produtsArr from '../../../data/produtsArr'
 import { useRef, useState } from 'react'
 
-export default function Cadaster({ funcComeBackPage }) {
+export default function Cadaster({ funcComeBackPage, productArr, setProductArr }) {
 
-    const refNameProduct = useRef()
-    const refAmoutProduct = useRef()
+    const [name, setName] = useState('')
+    const [amount, setAmount] = useState('')
+    
 
-    const addProductInArr = () => {
-        if (refNameProduct.current.value != '' && refAmoutProduct.current.value != '') {
-            produtsArr.push({ id: produtsArr.length.toString(), name: refNameProduct.current.value, amount: refAmoutProduct.current.value.toString() })
-            refNameProduct.current.value = ''
-            refAmoutProduct.current.value = ''
-        }
+    const addProductInArr = (name, amount) => {
+        setProductArr([...productArr,  {id: productArr.length.toString(), name: name, amount: amount}])
+        setName('')
+        setAmount('')
     }
 
     return (
@@ -23,11 +21,11 @@ export default function Cadaster({ funcComeBackPage }) {
 
             <div className={style.form_area}>
 
-                <Input ref={refNameProduct} value={refNameProduct.current}>Nome do Produto:</Input>
+                <Input value={name} onChange={(e) => setName(e.target.value)}>Nome do Produto:</Input>
 
-                <Input ref={refAmoutProduct} value={refAmoutProduct.current}>Unidades do Produto:</Input>
+                <Input value={amount} onChange={(e) => setAmount(e.target.value)}>Unidades do Produto:</Input>
 
-                <Button onClickFunc={addProductInArr}>Cadastrar</Button>
+                <Button onClickFunc={() => {addProductInArr(name, amount)}}>Cadastrar</Button>
 
             </div>
 

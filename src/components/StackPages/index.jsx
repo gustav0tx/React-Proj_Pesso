@@ -8,6 +8,8 @@ export default function StackPages () {
     
     const [page,setPage] = useState(0)
 
+    const [products, setProducts] = useState([])
+
     const goToCadaster = () => {
         setPage(1)
     }
@@ -30,10 +32,14 @@ export default function StackPages () {
             
             {page == 1 && <Cadaster 
             funcComeBackPage={comeBackPage}
+            productArr={products}
+            setProductArr={setProducts}
             />}
 
             {page == 2 && <StockView 
             funComeBackPage={comeBackPage}
+            productsArr={products}
+            setProductArr={setProducts}
             />}
 
         </>
